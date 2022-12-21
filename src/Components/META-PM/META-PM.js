@@ -67,13 +67,19 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            if(!mapEdit[0]?.meta_pm){
+                setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
                     category: 'Category 1: Tessellated fundus'
                 }
-            })}}  id="META-1" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+            })}
+        
+        }}  
+            
+            id="META-1" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
                 checked={selected.meta_pm.category === 'Category 1: Tessellated fundus'} />
             <label for="META-1" class="text-sm font-medium text-gray-900 ml-2 block">
             Category 1: Tessellated fundus
@@ -81,13 +87,15 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            
+            if(!mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
                     category: 'Category 2: Diffused chorioretinal atrophy'
                 }
-            })}} id="META-2" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
+            })}}} id="META-2" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
             checked={selected.meta_pm.category === 'Category 2: Diffused chorioretinal atrophy'}/>
             <label for="META-2" class="text-sm font-medium text-gray-900 ml-2 block">
             Category 2: Diffused chorioretinal atrophy
@@ -96,13 +104,13 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input  onClick={() => {setSelected({
+        <input  onClick={() => {if(!mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
                     category: 'Category 3: Patchy chorioretinal atrophy'
                 }
-            })}} id="META-3" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
+            })}}} id="META-3" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
             checked={selected.meta_pm.category === 'Category 3: Patchy chorioretinal atrophy'}/>
             <label for="META-3" class="text-sm font-medium text-gray-900 ml-2 block">
             Category 3: Patchy chorioretinal atrophy
@@ -111,13 +119,13 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input  onClick={() => {setSelected({
+        <input  onClick={() => {if(!mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
                     category: 'Category 4: Macular atrophy'
                 }
-            })}} id="META-4" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
+            })}}} id="META-4" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
             checked={selected.meta_pm.category === 'Category 4: Macular atrophy'}/>
             <label for="META-4" class="text-sm font-medium text-gray-900 ml-2 block">
             Category 4: Macular atrophy
@@ -137,7 +145,8 @@ return (
     
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                let currentLesions = selected.meta_pm.lesions;
+
+if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Lacquer Cracks')) {
                     currentLesions.splice(currentLesions.indexOf('Lacquer Cracks'), 1);
                 }else { 
@@ -150,13 +159,13 @@ return (
                     ...selected.meta_pm,
                     lesions: currentLesions
                 }
-            })}}  checked={selected.meta_pm.lesions.includes('Lacquer Cracks')} id="les_box" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
+            })}}}  checked={selected.meta_pm.lesions.includes('Lacquer Cracks')} id="les_box" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
             <label for="les_box" class="text-xs ml-3 font-medium text-gray-900">Lacquer Cracks</label>
         </div>
 
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                let currentLesions = selected.meta_pm.lesions;
+                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Myopic choroidal neovascularization')) {
                     currentLesions.splice(currentLesions.indexOf('Myopic choroidal neovascularization'), 1);
                 }else { 
@@ -169,7 +178,7 @@ return (
                     ...selected.meta_pm,
                     lesions: currentLesions
                 }
-            })}} id="les_box_1" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"
+            })}}} id="les_box_1" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"
             checked={selected.meta_pm.lesions.includes('Myopic choroidal neovascularization')}/>
             
             <label for="les_box_1" class="text-xs ml-3 font-medium text-gray-900">Myopic choroidal neovascularization</label>
@@ -177,7 +186,7 @@ return (
         
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                let currentLesions = selected.meta_pm.lesions;
+                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Fuchs spot')) {
                     currentLesions.splice(currentLesions.indexOf('Fuchs spot'), 1);
                 }else { 
@@ -190,13 +199,13 @@ return (
                     ...selected.meta_pm,
                     lesions: currentLesions
                 }
-            })}}  checked={selected.meta_pm.lesions.includes('Fuchs spot')} id="les_box_2" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
+            })}}}  checked={selected.meta_pm.lesions.includes('Fuchs spot')} id="les_box_2" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
             <label for="les_box_2" class="text-xs ml-3 font-medium text-gray-900">Fuchs spot</label>
         </div>
 
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                let currentLesions = selected.meta_pm.lesions;
+                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('None')) {
                     currentLesions.splice(currentLesions.indexOf('None'), 1);
                 }else { 
@@ -209,7 +218,7 @@ return (
                     ...selected.meta_pm,
                     lesions: currentLesions
                 }
-            })}} checked={selected.meta_pm.lesions.includes('None')} id="les_box_3" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
+            })}}} checked={selected.meta_pm.lesions.includes('None')} id="les_box_3" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded"/>
             <label for="les_box_3" class="text-xs ml-3 font-medium text-gray-900">None</label>
         </div>
     </fieldset>
