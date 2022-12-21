@@ -81,7 +81,7 @@ function App() {
       .then(res => res.json())
       .then(data => {
 
-        console.log(data);
+        // console.log(data);
         setSelected(data);
       }
 
@@ -114,7 +114,7 @@ function App() {
       
     }
     const queryString = window.location.search;
-    console.log(queryString);
+    // console.log(queryString);
    
     const urlParams = new URLSearchParams(queryString);
     let la=urlParams.get('last');
@@ -124,13 +124,13 @@ function App() {
       window.alert("All images have already been annotated. Thank you for your time!");
     }
     setImgSelected(la);
-    console.log(la);
+    // console.log(la);
 
   },[firstLoaded])
 
   useEffect(() => {
     const queryString = window.location.search;
-    console.log(queryString);
+    // console.log(queryString);
    
     const urlParams = new URLSearchParams(queryString);
     const jwt = urlParams.get('jwt');
@@ -143,9 +143,9 @@ function App() {
       setUser({id, jwt});
     }
 
-    console.log("USE_EFFECT");
-    console.log(loggedIn);
-    console.log(imgSelected);
+    // console.log("USE_EFFECT");
+    // console.log(loggedIn);
+    // console.log(imgSelected);
     
 
     if(loggedIn){
@@ -158,7 +158,7 @@ function App() {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setSelected(data);
       }
       );
@@ -172,7 +172,7 @@ function App() {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setMapEdit(data);
       }
       );
