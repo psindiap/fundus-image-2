@@ -28,7 +28,7 @@ return (
                 console.log(mapExpanded);
             }
         })}>
-            <div style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : "yellow"}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
+            <div style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
         </div>
         <div {...getCollapseProps()}>
 
