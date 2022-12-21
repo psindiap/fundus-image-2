@@ -89,7 +89,7 @@ function App() {
       
       );
 
-      fetch(`https://fundus-image-2.azurewebsites.net/db/getImage/${imgSelected}`, {
+      fetch(`https://fundus-image-2.azurewebsites.net/db/getUnmatched/${imgSelected}`, {
         method: 'GET',
         headers: {
           'token': `Bearer ${user.jwt}`,
@@ -163,7 +163,7 @@ function App() {
       }
       );
 
-      fetch(`https://fundus-image-2.azurewebsites.net/db/getImage/${imgSelected}`, {
+      fetch(`https://fundus-image-2.azurewebsites.net/db/getUnmatched/${imgSelected}`, {
         method: 'GET',
         headers: {
           'token': `Bearer ${user.jwt}`,
@@ -172,7 +172,7 @@ function App() {
       })
       .then(res => res.json())
       .then(data => {
-        // console.log(data);
+        console.log(data);
         setMapEdit(data);
       }
       );
