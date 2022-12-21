@@ -15,7 +15,7 @@ return (
       <div className="header" style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}}  {...getToggleProps({
              onClick: () => {
 
-                if(mapEdit[0]?.meta_pm===true){
+               
                     let currdp=!mapExpanded.meta_pm;
                     setMapExpanded({
                         meta_pm:currdp,
@@ -28,7 +28,7 @@ return (
                       });
                     
                     console.log(mapExpanded);
-                }
+                
                 
             }
         })}>
@@ -46,14 +46,18 @@ return (
     <fieldset class="mb-5">
         
 
-        <div class="flex items-left mb-4" style={{color:`${ mapEdit[0]?.meta_pm ? 'gray' : ""}`}}>
-            <input onClick={() => {setSelected({
-                ...selected,
-                meta_pm: {
-                    ...selected.meta_pm,
-                    category: 'Category 0: No Myopic retinal degenerative lesion'
-                }
-            })}}  
+        <div class="flex items-left mb-4" style={{color:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}}>
+            <input onClick={() => {
+                 if(!mapEdit[0]?.meta_pm){
+                    setSelected({
+                        ...selected,
+                        meta_pm: {
+                            ...selected.meta_pm,
+                            category: 'Category 0: No Myopic retinal degenerative lesion'
+                        }
+                    })
+                 }
+            }}  
             
             id="META" type="radio" name="METAs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" 
             checked={selected.meta_pm.category === 'Category 0: No Myopic retinal degenerative lesion'}/>
