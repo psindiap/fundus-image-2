@@ -5,7 +5,7 @@ import IMG from '../../Assets/META-PM.bmp';
 import Lesions from '../Lesions/Lesions';
 import { useState } from 'react';
 
-function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit, setMapEdit}) {
+function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit}) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
         isExpanded: mapExpanded.meta_pm,
     });
@@ -28,7 +28,7 @@ return (
                 console.log(mapExpanded);
             }
         })}>
-            <div style={{background:`${ mapEdit['meta_pm'] ? 'red' : "blue"}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
+            <div style={{background:`${ mapEdit[0]['meta_pm'] ? 'red' : "blue"}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
         </div>
         <div {...getCollapseProps()}>
 

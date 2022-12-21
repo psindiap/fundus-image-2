@@ -196,12 +196,12 @@ loggedIn &&
         <div className='flex'>
           <div className='flex flex-col' style={{width:"39%"}}>
           
-            <META_PM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit} />
-            <PS selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit} />
-            <Mac selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
-            <PeriM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
-            <DP selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
-            <Other selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
+            <META_PM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit}  />
+            <PS selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit}  />
+            <Mac selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} />
+            <PeriM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} />
+            <DP selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} />
+            <Other selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} />
           </div>
 
           <div className='flex flex-col' style={{width:"61%"}}>
