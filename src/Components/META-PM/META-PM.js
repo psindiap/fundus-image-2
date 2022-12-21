@@ -12,23 +12,27 @@ function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit})
 return (
     <div className="collapsible">
       {/* <div className="header" style={{background:`${ ? 'red' : ""}`}} {...getToggleProps({ */}
-      <div className="header" {...getToggleProps({
+      <div className="header" style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}}  {...getToggleProps({
              onClick: () => {
-                let currdp=!mapExpanded.meta_pm;
-                setMapExpanded({
-                    meta_pm:currdp,
-                    ps: false,
-                    mac: false,
-                    peri: false,
-                    perim: false,
-                    dp: false,
-                    other: false,
-                  });
+
+                if(mapEdit[0]?.meta_pm===true){
+                    let currdp=!mapExpanded.meta_pm;
+                    setMapExpanded({
+                        meta_pm:currdp,
+                        ps: false,
+                        mac: false,
+                        peri: false,
+                        perim: false,
+                        dp: false,
+                        other: false,
+                      });
+                    
+                    console.log(mapExpanded);
+                }
                 
-                console.log(mapExpanded);
             }
         })}>
-            <div style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
+            {mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}
         </div>
         <div {...getCollapseProps()}>
 
@@ -42,7 +46,7 @@ return (
     <fieldset class="mb-5">
         
 
-        <div class="flex items-left mb-4">
+        <div class="flex items-left mb-4" style={{color:`${ mapEdit[0]?.meta_pm ? 'gray' : ""}`}}>
             <input onClick={() => {setSelected({
                 ...selected,
                 meta_pm: {
