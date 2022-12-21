@@ -5,13 +5,14 @@ import IMG from '../../Assets/META-PM.bmp';
 import Lesions from '../Lesions/Lesions';
 import { useState } from 'react';
 
-function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded}) {
+function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit, setMapEdit}) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
         isExpanded: mapExpanded.meta_pm,
     });
 return (
     <div className="collapsible">
-      <div className="header" {...getToggleProps({
+      {/* <div className="header" style={{background:`${ ? 'red' : ""}`}} {...getToggleProps({ */}
+      <div className="header" style={{background:`${ mapEdit['meta_pm'] ? 'red' : ""}`}} {...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.meta_pm;
                 setMapExpanded({
