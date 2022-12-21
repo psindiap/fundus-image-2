@@ -13,6 +13,7 @@ import img from './Optos/1611516_OD_1.jpg';
 import { useState } from 'react';
 import Nav from './Components/Nav/Nav';
 
+
 let tot=98;
 function App() {
 
@@ -123,7 +124,7 @@ function App() {
       la=tot;
       window.alert("All images have already been annotated. Thank you for your time!");
     }
-    setImgSelected(la);
+    setImgSelected(0);
     // console.log(la);
 
   },[firstLoaded])
