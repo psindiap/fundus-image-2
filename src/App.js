@@ -26,6 +26,17 @@ function App() {
     other: false,
   });
 
+
+  const [mapEdit, setMapEdit]=useState({
+    meta_pm:true,
+    ps: true,
+    mac: true,
+    peri: true,
+    perim: true,
+    dp: true,
+    other: true,
+  });
+
   const [DPexpanded, setDPexpanded]=useState(false);
   const [macExpanded, setMacExpanded]=useState(false);
 
@@ -73,7 +84,31 @@ function App() {
         console.log(data);
         setSelected(data);
       }
+
+
+      
       );
+
+      fetch(`https://fundus-image-2.azurewebsites.net/db/getImage/${imgSelected}`, {
+        method: 'GET',
+        headers: {
+          'token': `Bearer ${user.jwt}`,
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(res => res.json())
+      .then(data => {
+
+        console.log(data);
+        setMapEdit(data);
+      }
+
+
+      
+      );
+
+
+      
 
       
       
@@ -127,6 +162,20 @@ function App() {
         setSelected(data);
       }
       );
+
+      fetch(`https://fundus-image-2.azurewebsites.net/db/getImage/${imgSelected}`, {
+        method: 'GET',
+        headers: {
+          'token': `Bearer ${user.jwt}`,
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setMapEdit(data);
+      }
+      );
     }
     
   }, [imgSelected, loggedIn]);
@@ -138,7 +187,7 @@ function App() {
         {
         loggedIn && 
         <div>
-        <Nav loggedIn={loggedIn} imgSelected={imgSelected} setImgSelected={setImgSelected} setSelected={setSelected}/>
+        <Nav loggedIn={loggedIn} imgSelected={imgSelected} setImgSelected={setImgSelected} setSelected={setSelected} />
         </div>}
 {
 loggedIn && 
@@ -146,12 +195,12 @@ loggedIn &&
         <div className='flex'>
           <div className='flex flex-col' style={{width:"39%"}}>
           
-            <META_PM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
-            <PS selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
-            <Mac selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
-            <PeriM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
-            <DP selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
-            <Other selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} />
+            <META_PM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit} />
+            <PS selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit} />
+            <Mac selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
+            <PeriM selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
+            <DP selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
+            <Other selected={selected} setSelected={setSelected} mapExpanded={mapExpanded} setMapExpanded={setMapExpanded} mapEdit={mapEdit} setMapEdit={setMapEdit}/>
           </div>
 
           <div className='flex flex-col' style={{width:"61%"}}>
