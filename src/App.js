@@ -44,7 +44,7 @@ function App() {
 // let la=0;
   const [loggedIn, setLoggedIn] = useState(false);
   // const [la, setLa] = useState(1);
-  let la=0;
+  let la=1;
   const [user, setUser] = useState(null);
   const [firstLoaded,setFirstLoaded]=useState(false);
 
@@ -124,7 +124,7 @@ function App() {
       la=tot;
       window.alert("All images have already been annotated. Thank you for your time!");
     }
-    setImgSelected(0);
+    setImgSelected(1);
     // console.log(la);
 
   },[firstLoaded])
