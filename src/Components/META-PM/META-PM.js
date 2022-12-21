@@ -12,7 +12,7 @@ function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit, 
 return (
     <div className="collapsible">
       {/* <div className="header" style={{background:`${ ? 'red' : ""}`}} {...getToggleProps({ */}
-      <div className="header" style={{background:`${ mapEdit['meta_pm'] ? 'red' : ""}`}} {...getToggleProps({
+      <div className="header" {...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.meta_pm;
                 setMapExpanded({
@@ -28,7 +28,7 @@ return (
                 console.log(mapExpanded);
             }
         })}>
-            {mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}
+            <div style={{background:`${ mapEdit['meta_pm'] ? 'red' : ""}`}} >{mapExpanded.meta_pm ? 'META-PM (Collapse)' : 'META-PM (Expand)'}</div>
         </div>
         <div {...getCollapseProps()}>
 
