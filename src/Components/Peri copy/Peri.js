@@ -49,7 +49,7 @@ return (
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
-      value={selected.perim?(selected.perim.nasal):"Nasal"}
+      value={selected.perim?(selected.perim.nasal):"Grade 0"}
       onChange={(e) => {
 
         if(mapEdit[0]?.perim){setSelected({
@@ -88,7 +88,7 @@ return (
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
-      value={selected.perim?(selected.perim.temporal):"Temporal"}
+      value={selected.perim?(selected.perim.temporal):"Grade 1"}
       onChange={(e) => {
         if(mapEdit[0]?.perim){setSelected({
           ...selected,
@@ -124,7 +124,7 @@ return (
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
-      value={selected.perim?(selected.perim.superior):"Superior"}
+      value={selected.perim?(selected.perim.superior):"Grade 3"}
       onChange={(e) => {
         if(mapEdit[0]?.perim){setSelected({
           ...selected,
@@ -161,7 +161,7 @@ return (
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
-      value={selected.perim?(selected.perim.inferior):"Inferior"}
+      value={selected.perim?(selected.perim.inferior):"Grade 2"}
       onChange={(e) => {
         if(mapEdit[0]?.perim){setSelected({
           ...selected,
