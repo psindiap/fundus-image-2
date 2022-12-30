@@ -2,13 +2,13 @@
 import React from 'react';
 import useCollapse from 'react-collapsed';
 import IMG from '../../Assets/PS.bmp';
-function PS({selected, setSelected,  mapExpanded ,setMapExpanded}) {
+function PS({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit}) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
         isExpanded: mapExpanded.ps,
     });
 return (
     <div className="collapsible">
-       <div className="header" {...getToggleProps({
+       <div className="header"  style={{background:`${ mapEdit[0]?.ps ? 'red' : ""}`}} {...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.ps;
                 setMapExpanded({

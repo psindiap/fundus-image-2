@@ -12,7 +12,7 @@ function META_PM({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit})
 return (
     <div className="collapsible">
       {/* <div className="header" style={{background:`${ ? 'red' : ""}`}} {...getToggleProps({ */}
-      <div className="header" style={{background:`${ mapEdit[0]?.meta_pm ? 'green' : 'red'}`}}  {...getToggleProps({
+      <div className="header" style={{background:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}}  {...getToggleProps({
              onClick: () => {
 
                

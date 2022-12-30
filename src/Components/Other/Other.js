@@ -1,13 +1,13 @@
 
 import React from 'react';
 import useCollapse from 'react-collapsed';
-function Other({selected, setSelected,  mapExpanded ,setMapExpanded}) {
+function Other({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit}) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
         isExpanded: mapExpanded.other,
     });
 return (
     <div className="collapsible">
-        <div className="header" {...getToggleProps({
+        <div className="header"  style={{background:`${ mapEdit[0]?.other ? 'red' : ""}`}}{...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.other;
                 setMapExpanded({

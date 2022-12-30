@@ -2,13 +2,13 @@
 import React from 'react';
 import useCollapse from 'react-collapsed';
 import IMG from '../../Assets/Perim.bmp';
-function Peri({selected, setSelected,  mapExpanded ,setMapExpanded}) {
+function Peri({selected, setSelected,  mapExpanded ,setMapExpanded, mapEdit}) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
         isExpanded: mapExpanded.perim,
     });
 return (
     <div className="collapsible">
-        <div className="header" {...getToggleProps({
+        <div className="header"  style={{background:`${ mapEdit[0]?.perim ? 'red' : ""}`}} {...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.perim;
                 setMapExpanded({
