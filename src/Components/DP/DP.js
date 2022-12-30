@@ -13,7 +13,9 @@ return (
         <div className="header" style={{background:`${ mapEdit[0]?.dp ? 'red' : ""}`}} {...getToggleProps({
             onClick: () => {
                 let currdp=!mapExpanded.dp;
-                setMapExpanded({
+
+                if(mapEdit[0]?.dp)
+                {setMapExpanded({
                     meta_pm:false,
                     ps: false,
                     mac: false,
@@ -21,7 +23,7 @@ return (
                     perim: false,
                     dp: currdp,
                     other: false,
-                  });
+                  });}
                 
                 console.log(mapExpanded);
             }
@@ -42,20 +44,25 @@ return (
                         
                 
                         <div class="flex items-center mb-4">
-                            <input onClick={() => {setSelected({
+                            <input onClick={() => {
+                                if(mapEdit[0]?.dp)
+                                {setSelected({
                                 ...selected,
                                 dp: 'A: Horizontal'
-                            })}} id="DP" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'A: Horizontal'}/>
+                            })}
+                            }} id="DP" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'A: Horizontal'}/>
                             <label for="DP" class="text-sm font-medium text-gray-900 ml-2 block">
                             A: Horizontal
                             </label>
                         </div>
                 
                         <div class="flex items-center mb-4">
-                        <input onClick={() => {setSelected({
+                        <input onClick={() => {
+                            if(mapEdit[0]?.dp){setSelected({
                                 ...selected,
                                 dp: 'B: Nasal'
-                            })}} id="DP-1" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'B: Nasal'}/>
+                            })}
+                            }} id="DP-1" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'B: Nasal'}/>
                             <label for="DP-1" class="text-sm font-medium text-gray-900 ml-2 block">
                             B: Nasal
                 
@@ -63,10 +70,13 @@ return (
                         </div>
                 
                         <div class="flex items-center mb-4">
-                        <input onClick={() => {setSelected({
+                        <input onClick={() => {
+                            
+                            if(mapEdit[0]?.dp){setSelected({
                                 ...selected,
                                 dp: 'C: Vertical'
-                            })}} id="DP-2" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'C: Vertical'}/>
+                            })}
+                            }} id="DP-2" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'C: Vertical'}/>
                             <label for="DP-2" class="text-sm font-medium text-gray-900 ml-2 block">
                             C: Vertical
                 
@@ -74,10 +84,12 @@ return (
                         </div>
                 
                         <div class="flex items-center mb-4">
-                        <input onClick={() => {setSelected({
+                        <input onClick={() => {
+                            if(mapEdit[0]?.dp){setSelected({
                                 ...selected,
                                 dp: 'D: Oblique'
-                            })}} id="DP-3" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'D: Oblique'}/>
+                            })}
+                            }} id="DP-3" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'D: Oblique'}/>
                             <label for="DP-3" class="text-sm font-medium text-gray-900 ml-2 block">
                             D: Oblique
                 
@@ -85,10 +97,12 @@ return (
                         </div>
                 
                         <div class="flex items-center mb-4">
-                        <input onClick={() => {setSelected({
+                        <input onClick={() => {
+                            if(mapEdit[0]?.dp){setSelected({
                                 ...selected,
                                 dp: 'E: No Tilt'
-                            })}} id="DP-4" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'E: No Tilt'}/>
+                            })}
+                            }} id="DP-4" type="radio" name="DPs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.dp === 'E: No Tilt'}/>
                             <label for="DP-4" class="text-sm font-medium text-gray-900 ml-2 block">
                             E: No Tilt
                             </label>

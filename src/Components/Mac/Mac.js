@@ -11,7 +11,7 @@ return (
              onClick: () => {
                 let currdp=!mapExpanded.mac;
 
-                setMapExpanded({
+                if(mapEdit[0]?.mac){setMapExpanded({
                     meta_pm:false,
                     ps: false,
                     mac: currdp,
@@ -19,7 +19,7 @@ return (
                     perim: false,
                     dp: false,
                     other: false,
-                  });
+                  });}
                 
                 console.log(mapExpanded);
             }
@@ -52,50 +52,60 @@ return (
         
 
         <div class="flex items-center mb-4">
-            <input  onClick={() => {setSelected({
+            <input  onClick={() => {
+                if(mapEdit[0]?.mac){setSelected({
                 ...selected,
                 mac: 'Grade 0: No Tessellation'
-            })}} id="mac" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 0: No Tessellation'}/>
+            })}
+            }} id="mac" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 0: No Tessellation'}/>
             <label for="mac" class="text-sm font-medium text-gray-900 ml-2 block" >
             Grade 0: No Tessellation
             </label>
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            if(mapEdit[0]?.mac){setSelected({
                 ...selected,
                 mac: 'Grade 1: Tessellation without involving the outer circle'
-            })}} id="mac-1" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 1: Tessellation without involving the outer circle'}/>
+            })}
+            }} id="mac-1" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 1: Tessellation without involving the outer circle'}/>
             <label for="mac-1" class="text-sm font-medium text-gray-900 ml-2 block">
             Grade 1: Tessellation without involving the outer circle
             </label>
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            if(mapEdit[0]?.mac){setSelected({
                 ...selected,
                 mac: 'Grade 2: Tessellation involving the outer circle'
-            })}} id="mac-2" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 2: Tessellation involving the outer circle'}/>
+            })}
+            }} id="mac-2" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 2: Tessellation involving the outer circle'}/>
             <label for="mac-2" class="text-sm font-medium text-gray-900 ml-2 block">
             Grade 2: Tessellation involving the outer circle
             </label>
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            if(mapEdit[0]?.mac){setSelected({
                 ...selected,
                 mac: 'Grade 3: Tessellation involving the inner circle'
-            })}} id="mac-3" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 3: Tessellation involving the inner circle'}/>
+            })}
+            }} id="mac-3" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 3: Tessellation involving the inner circle'}/>
             <label for="mac-3" class="text-sm font-medium text-gray-900 ml-2 block">
             Grade 3: Tessellation involving the inner circle
             </label>
         </div>
 
         <div class="flex items-center mb-4">
-        <input onClick={() => {setSelected({
+        <input onClick={() => {
+            if(mapEdit[0]?.mac){setSelected({
                 ...selected,
                 mac: 'Grade 4: Tessellation involving the center circle'
-            })}} id="mac-4" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 4: Tessellation involving the center circle'}/>
+            })}
+            }} id="mac-4" type="radio" name="Macs" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked={selected.mac === 'Grade 4: Tessellation involving the center circle'}/>
             <label for="mac-4" class="text-sm font-medium text-gray-900 ml-2 block">
             Grade 4: Tessellation involving the center circle
             </label>
