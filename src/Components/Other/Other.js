@@ -10,7 +10,7 @@ return (
         <div className="header"  style={{background:`${ mapEdit[0]?.other ? 'red' : ""}`}}{...getToggleProps({
              onClick: () => {
                 let currdp=!mapExpanded.other;
-                if(mapEdit[0]?.other){setMapExpanded({
+                setMapExpanded({
                     meta_pm:false,
                     ps: false,
                     mac: false,
@@ -18,7 +18,7 @@ return (
                     perim: false,
                     dp: false,
                     other: currdp,
-                  });}
+                  });
                 
                 console.log(mapExpanded);
             }

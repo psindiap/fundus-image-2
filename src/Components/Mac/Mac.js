@@ -11,7 +11,7 @@ return (
              onClick: () => {
                 let currdp=!mapExpanded.mac;
 
-                if(mapEdit[0]?.mac){setMapExpanded({
+                if(true){setMapExpanded({
                     meta_pm:false,
                     ps: false,
                     mac: currdp,
