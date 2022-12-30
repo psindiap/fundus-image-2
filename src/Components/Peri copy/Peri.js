@@ -51,14 +51,16 @@ return (
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
       value={selected.perim?(selected.perim.nasal):"Nasal"}
       onChange={(e) => {
-        setSelected({
+
+        if(mapEdit[0]?.perim){setSelected({
           ...selected,
           perim: {
             ...selected.perim,
             nasal: e.target.value,
           },
-        });
-      }}
+        });}
+      }
+    }
     >
         <option value="Nasal" >Nasal</option>
         <option value="Grade 0" >Grade 0</option>
@@ -88,13 +90,13 @@ return (
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
       value={selected.perim?(selected.perim.temporal):"Temporal"}
       onChange={(e) => {
-        setSelected({
+        if(mapEdit[0]?.perim){setSelected({
           ...selected,
           perim: {
             ...selected.perim,
             temporal: e.target.value,
           },
-        });
+        });}
       }}>
         <option value="Temporal">Temporal</option>
         <option value="Grade 0">Grade 0</option>
@@ -124,13 +126,13 @@ return (
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
       value={selected.perim?(selected.perim.superior):"Superior"}
       onChange={(e) => {
-        setSelected({
+        if(mapEdit[0]?.perim){setSelected({
           ...selected,
           perim: {
             ...selected.perim,
             superior: e.target.value,
           },
-        });
+        });}
       }}>
         <option value="Superior">Superior</option>
         <option value="Grade 0">Grade 0</option>
@@ -161,13 +163,13 @@ return (
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example"
       value={selected.perim?(selected.perim.inferior):"Inferior"}
       onChange={(e) => {
-        setSelected({
+        if(mapEdit[0]?.perim){setSelected({
           ...selected,
           perim: {
             ...selected.perim,
             inferior: e.target.value,
           },
-        });
+        });}
       }}>
         <option value="Inferior">Inferior</option>
         <option value="Grade 0">Grade 0</option>
