@@ -48,7 +48,7 @@ return (
 
         <div class="flex items-left mb-4" style={{color:`${ mapEdit[0]?.meta_pm ? 'red' : ""}`}}>
             <input onClick={() => {
-                 if(!mapEdit[0]?.meta_pm){
+                 if(mapEdit[0]?.meta_pm){
                     setSelected({
                         ...selected,
                         meta_pm: {
@@ -68,7 +68,7 @@ return (
 
         <div class="flex items-center mb-4">
         <input onClick={() => {
-            if(!mapEdit[0]?.meta_pm){
+            if(mapEdit[0]?.meta_pm){
                 setSelected({
                 ...selected,
                 meta_pm: {
@@ -89,7 +89,7 @@ return (
         <div class="flex items-center mb-4">
         <input onClick={() => {
             
-            if(!mapEdit[0]?.meta_pm){setSelected({
+            if(mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
@@ -104,7 +104,7 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input  onClick={() => {if(!mapEdit[0]?.meta_pm){setSelected({
+        <input  onClick={() => {if(mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
@@ -119,7 +119,7 @@ return (
         </div>
 
         <div class="flex items-center mb-4">
-        <input  onClick={() => {if(!mapEdit[0]?.meta_pm){setSelected({
+        <input  onClick={() => {if(mapEdit[0]?.meta_pm){setSelected({
                 ...selected,
                 meta_pm: {
                     ...selected.meta_pm,
@@ -146,7 +146,7 @@ return (
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
 
-if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
+if(mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Lacquer Cracks')) {
                     currentLesions.splice(currentLesions.indexOf('Lacquer Cracks'), 1);
                 }else { 
@@ -165,7 +165,7 @@ if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
 
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
+                if(mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Myopic choroidal neovascularization')) {
                     currentLesions.splice(currentLesions.indexOf('Myopic choroidal neovascularization'), 1);
                 }else { 
@@ -186,7 +186,7 @@ if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
         
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
+                if(mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('Fuchs spot')) {
                     currentLesions.splice(currentLesions.indexOf('Fuchs spot'), 1);
                 }else { 
@@ -205,7 +205,7 @@ if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
 
         <div class="flex items-start items-center mb-4">
             <input onClick={() => {
-                if(!mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
+                if(mapEdit[0]?.meta_pm){let currentLesions = selected.meta_pm.lesions;
                 if (currentLesions.includes('None')) {
                     currentLesions.splice(currentLesions.indexOf('None'), 1);
                 }else { 
